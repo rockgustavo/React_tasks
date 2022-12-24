@@ -24,4 +24,5 @@ yarn-error.log*
 
 # Local Netlify folder
 .netlify
-.FireBaseConnection.js
+
+src/FireBaseConnection.js
