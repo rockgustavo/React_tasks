@@ -1,5 +1,6 @@
 # Projeto de amostra React
-Um projeto para expor tecnologias e modelagem de dados
+App de agendamento e controle de tarefas
+Projeto para expor tecnologias, modelagem de dados e utilização dos recursos
 
 ## Tecnologias utilizadas:
 * React
@@ -8,10 +9,4 @@ Um projeto para expor tecnologias e modelagem de dados
 * HTML5
 * CSS3
 
-Link do App: [https://taskstrailer.netlify.app/](https://taskstrailer.netlify.app/){target="_blank"}
-
-Link do App: [https://taskstrailer.netlify.app/](https://taskstrailer.netlify.app/){:target="_blank"} //1
-
-Link do App: [https://taskstrailer.netlify.app/](https://taskstrailer.netlify.app/){target="_blank"} //2
-
-Link do App: <a href="https://taskstrailer.netlify.app/" target="_blank">demo</a> //html
+Link do App: [Lista de Tarefas](https://taskstrailer.netlify.app/)
