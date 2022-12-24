@@ -1,0 +1,78 @@
+.admin-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 48px;
+}
+
+.admin-container h1{
+    margin-bottom: 28px;
+}
+
+.admin-container textarea{
+    border: 0;
+    border-radius: 5px;
+    height: 200px;
+    margin-bottom: 10px;
+    padding: 5px;
+    font-size: 18px;
+}
+
+.admin-container textarea:focus{
+    outline: none;
+}
+
+.btn-register{
+    margin-bottom: 28px;
+}
+
+.list{
+    width: 90%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgba(18, 18, 18, 0.38);
+    border-radius: 5px;
+    margin-bottom: 12px;
+    padding: 14px 8px;
+}
+
+.list p{
+    margin-bottom: 8px;
+}
+
+.list button{
+    margin-top: 20px;
+    margin-right: 8px;
+    border: 0;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.btn-delete{
+    color: #ffcc23;
+    background-color: #a2afbd;;
+}
+
+.btn-logout{
+    cursor: pointer;
+    position: absolute;
+    bottom: 6%;
+    right: 3%;
+    width: 80px;
+    height: 80px;
+    border-radius: 50px;
+    border: 0;
+    font-weight: bold;
+    background-color: rgba(199, 39, 41, 0.6);
+    color: #fafafa;
+    font-size: 16px;
+    transition: all 0.5s;
+}
+
+.btn-logout:hover{
+    background-color: rgba(199, 39, 41, 1);
+    color: #fff;
+}
