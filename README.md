@@ -1,4 +1,4 @@
-# Projeto de amostra de React
+# Projeto de amostra React
 Um projeto para expor tecnologias e modelagem de dados
 
 ## Tecnologias utilizadas:
@@ -8,4 +8,4 @@ Um projeto para expor tecnologias e modelagem de dados
 * HTML5
 * CSS3
 
-Link do App: [https://taskstrailer.netlify.app/](https://taskstrailer.netlify.app/{:target="_blank"}
+Link do App: [https://taskstrailer.netlify.app/](https://taskstrailer.netlify.app/){:target="_blank"}
