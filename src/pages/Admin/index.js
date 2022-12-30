@@ -49,11 +49,11 @@ const Admin = () => {
   async function handleTask(e) {
     e.preventDefault();
     if (tarefaInput === '') {
-      toast.warn("Digite sua tarefa");
+      toast.warn("Digite sua tarefa", { position: "top-center" });
       return;
     }
 
-    if(edit?.id){
+    if (edit?.id) {
       handleUpdateTask();
       return;
     }
@@ -64,25 +64,25 @@ const Admin = () => {
       userUid: user?.uid
     })
       .then(() => {
-        toast.success("Tarefa salva com sucesso!");
+        toast.success("Tarefa salva com sucesso!", { position: "top-center" });
         setTarefaInput('');
       })
       .catch((e) => {
-        toast.error("Ocorreu um erro: " + e);
+        toast.error("Ocorreu um erro: " + e, { position: "top-center" });
       })
   }
 
-  async function handleUpdateTask(){
+  async function handleUpdateTask() {
     const docRef = doc(db, "tarefas", edit?.id);
     await updateDoc(docRef, {
       tarefa: tarefaInput
     })
-    .then(() => {
-      toast.success("Tarefa atualizada com sucesso!");
-    })
-    .catch((e) => {
-      toast.error("Ocorreu um erro: " + e);
-    });
+      .then(() => {
+        toast.success("Tarefa atualizada com sucesso!", { position: "top-center" });
+      })
+      .catch((e) => {
+        toast.error("Ocorreu um erro: " + e, { position: "top-center" });
+      });
     setTarefaInput('');
     setEdit({});
   }
@@ -91,10 +91,10 @@ const Admin = () => {
     const docRef = doc(db, "tarefas", id);
     await deleteDoc(docRef)
       .then(() => {
-        toast.success("Tarefa concluída com sucesso!");
+        toast.success("Tarefa concluída com sucesso!", { position: "top-center" });
       })
       .catch((e) => {
-        toast.error("Ocorreu um erro: " + e);
+        toast.error("Ocorreu um erro: " + e, { position: "top-center" });
       })
   }
 
@@ -119,14 +119,14 @@ const Admin = () => {
             onChange={(e) => setTarefaInput(e.target.value)}
             placeholder='Digite sua tarefa' />
 
-          {Object.keys(edit).length > 0 ? 
-          (
-            <button className='btn-register' style={{backgroundColor: '#4FB524'}} type='submit'>Atualizar Tarefa</button>
-          ) 
-          : 
-          (
-            <button className='btn-register' type='submit'>Registrar Nova Tarefa</button>
-          )
+          {Object.keys(edit).length > 0 ?
+            (
+              <button className='btn-register' style={{ backgroundColor: '#4FB524' }} type='submit'>Atualizar Tarefa</button>
+            )
+            :
+            (
+              <button className='btn-register' type='submit'>Registrar Nova Tarefa</button>
+            )
           }
         </form>
 

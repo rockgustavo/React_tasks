@@ -19,16 +19,24 @@ const Register = () => {
     if (email && password) {
       await createUserWithEmailAndPassword(auth, email, password)
         .then(() => {
-          toast.success("Conta cadastrada com sucesso");
+          toast.success("Conta cadastrada com sucesso", { position: "top-center" });
 
           navigate('/admin', { replace: true });
         })
         .catch((e) => {
-          toast.error('Conta não autenticada! ' + e.code);
+          console.log(e.code)
+          if (e.code === 'auth/invalid-email') {
+            toast.error('E-mail digitado é inválido! ' + e.code, { position: "top-center" });
+          }
+          else if (e.code === 'auth/weak-password') {
+            toast.error('A senha precisa conter pelo menos 6 caracteres! ' + e.code, { position: "top-center" });
+          } else {
+            toast.error('Erro ao criar conta! ' + e.code, { position: "top-center" });
+          }
         });
 
     } else {
-      toast.warn('Preencha todos os campos')
+      toast.warn('Preencha todos os campos', { position: "top-center" })
     }
   }
 
@@ -41,7 +49,7 @@ const Register = () => {
         <form className='form' onSubmit={handleRegister}>
           <input type="text" placeholder='Digite seu email...'
             value={email} onChange={(e) => setEmail(e.target.value)} />
-          <input type="text" placeholder='Digite sua senha...'
+          <input type="password" placeholder='Digite sua senha...'
             value={password} onChange={(e) => setPassword(e.target.value)} />
           <button type='submit'>Cadastrar</button>
         </form>

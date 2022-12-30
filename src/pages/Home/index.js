@@ -26,18 +26,18 @@ const Home = () => {
         .catch((e) => {
           console.log(e.code)
           if (e.code === 'auth/user-not-found') {
-            toast.error('E-mail não encontrado ou incorreto!');
+            toast.error('E-mail não encontrado ou incorreto!', { position: "top-center" });
           }
           else if (e.code === 'auth/wrong-password') {
-            toast.error('Senha incorreta!');
+            toast.error('Senha incorreta!', { position: "top-center" });
           }
           else {
-            toast.error('Conta não autenticada! ' + e.code);
+            toast.error('Conta não autenticada! ' + e.code, { position: "top-center" });
           }
         });
 
     } else {
-      toast.warn('Preencha todos os campos')
+      toast.warn('Preencha todos os campos', { position: "top-center" })
     }
   }
 
@@ -58,6 +58,12 @@ const Home = () => {
         <Link to="/register">
           Não possui uma conta? Cadastre-se aqui
         </Link>
+
+        <div className="login">
+          <p>Conta de testes</p>
+          <p>E-mail de login: <strong>admin@admin.com</strong></p>
+          <p>Senha: <strong>12345678</strong></p>
+        </div>
       </div>
     </>
   )
